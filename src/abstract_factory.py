@@ -111,10 +111,11 @@ class ModernFurnitureCreator(FurnitureCreator):
 
 # Notes
 
-# Elements
-# Product Role: object client would like to interact with
-# Creator Role: creates the Product; can handles requests made from client too (see name_furniture())
-
-
 # When to use
 # Want to interact with families (extend Victorian, Modern)
+
+# How to implement:
+# 1. Create Abstract Product that Concrete Products can implement
+# 2. Create Abstract Creator that holds abstract factory_method.
+# 3. For each family, implement Concrete Products and a Concrete Creator that implements factory_method,
+# which returns the corresponding family of Products

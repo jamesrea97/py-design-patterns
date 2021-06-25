@@ -1,6 +1,5 @@
 """Module contains a simple Builder Design Pattern"""
-from typing import Iterator
-from abc import ABC, abstractmethod, abstractproperty
+from abc import ABC, abstractmethod
 
 
 class Pizza:
@@ -94,9 +93,13 @@ class AmericanStylePizzaBuilder:
 
 # Notes
 
-# Elements
-# Product Role: object client would like to interact with
-# Creator Role: creates the Product; can handles requests made from client too (see name_furniture())
-
 # When to use
-# Want to interact with families (extend Victorian, Modern)
+# Want to construct complex objects - ie..e with many parameters
+
+# How to implement:
+# 1. Create a Product, Abstract and Concrete Builder class
+# 2. In Abstract Builder class, define the build_with and build() methods abstractly
+# 3. In Concrete Builder, hold private Product instance, implement build_with methods, each returning
+# the Builder so that they can be chained together. Implement build to return current state of Product
+# instance.
+# 4. In Product object create method to add_property.
