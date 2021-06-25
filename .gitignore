@@ -1,3 +1,6 @@
 # Virtual Env
 venv
-__pycache/
+
+# VSCODE
+__pycache__/
+.vscode/
