@@ -1,5 +1,6 @@
 # Notes
 
+This project aims to help myself understand and summarize several design patterns in Python. 
 ## A note on abstractmethod
 ```py
 from abc import ABC, @abstractmethod 

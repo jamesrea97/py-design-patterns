@@ -85,9 +85,6 @@ class FurnitureCreator(ABC):
     def factory_method(self):
         pass
 
-    def name_furniture(self) -> str:
-        return self.factory_method()
-
 
 class VictorianFurnitureCreator(FurnitureCreator):
     """
@@ -96,7 +93,7 @@ class VictorianFurnitureCreator(FurnitureCreator):
     """
 
     def factory_method(self) -> tuple:
-        return (VictorianChair().__str__(), VictorianSofa().__str__())
+        return (VictorianChair(), VictorianSofa())
 
 
 class ModernFurnitureCreator(FurnitureCreator):
@@ -106,7 +103,7 @@ class ModernFurnitureCreator(FurnitureCreator):
     """
 
     def factory_method(self) -> tuple:
-        return (ModernChair().__str__(), ModernSofa().__str__())
+        return (ModernChair(), ModernSofa())
 
 
 # Notes
@@ -115,7 +112,7 @@ class ModernFurnitureCreator(FurnitureCreator):
 # Want to interact with families (extend Victorian, Modern)
 
 # How to implement:
-# 1. Create Abstract Product that Concrete Products can implement
-# 2. Create Abstract Creator that holds abstract factory_method.
-# 3. For each family, implement Concrete Products and a Concrete Creator that implements factory_method,
+# 1. Create AbstractProduct (Chair, Sofa) for each Product in family (ModernChair, ModernSofa) & (VictorianChair, VictorianSofa)
+# 2. Create AbstractCreator (FurnitureCreator) that each family (VictorianFurnitureCreator, ModernFurnitureCreator) will implement
+# 3. For each family, implement ConcreteProducts and a ConcreteCreator that implements factory_method,
 # which returns the corresponding family of Products
