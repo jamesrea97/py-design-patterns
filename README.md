@@ -25,3 +25,9 @@ NonAbstractObject().function() # invalid as not implemented
 AbstractObject() # invalid as abstract
 
 ```
+
+
+
+## Design Pattern Principles
+
+Dependenct Injection: passing the object as parameter so that you can mock it/reduce coupling.
